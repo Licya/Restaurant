@@ -36,23 +36,23 @@ class Product
     private $description;
 
     /**
-     * @var string
+     * @var float
      *
-     * @ORM\Column(name="main_price", type="decimal")
+     * @ORM\Column(name="main_price", type="decimal", scale=2, nullable="true")
      */
     private $mainPrice;
 
     /**
-     * @var string
+     * @var float
      *
-     * @ORM\Column(name="secondPrice", type="decimal", scale="2", nullable="true")
+     * @ORM\Column(name="secondPrice", type="decimal", scale=2, nullable="true")
      */
     private $secondPrice;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="enable", type="boolean", scale="2", nullable="true")
+     * @ORM\Column(name="enable", type="boolean")
      */
     private $enabled;
 
@@ -116,7 +116,7 @@ class Product
     /**
      * Set mainPrice
      *
-     * @param string $mainPrice
+     * @param float $mainPrice
      * @return Product
      */
     public function setMainPrice($mainPrice)
@@ -129,7 +129,7 @@ class Product
     /**
      * Get mainPrice
      *
-     * @return string 
+     * @return float 
      */
     public function getMainPrice()
     {
@@ -139,7 +139,7 @@ class Product
     /**
      * Set secondPrice
      *
-     * @param string $secondPrice
+     * @param float $secondPrice
      * @return Product
      */
     public function setSecondPrice($secondPrice)
@@ -152,7 +152,7 @@ class Product
     /**
      * Get secondPrice
      *
-     * @return string 
+     * @return float 
      */
     public function getSecondPrice()
     {

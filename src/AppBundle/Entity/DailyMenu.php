@@ -29,11 +29,11 @@ class DailyMenu
     private $title;
 
     /**
-     * @var string
+     * @var float
      *
-     * @ORM\Column(name="prince", type="decimal", scale="2")
+     * @ORM\Column(name="prince", type="decimal", scale=2)
      */
-    private $prince;
+    private $price;
 
     /**
      * @var \DateTime
@@ -84,26 +84,26 @@ class DailyMenu
     }
 
     /**
-     * Set prince
+     * Set price
      *
-     * @param string $prince
+     * @param float $price
      * @return DailyMenu
      */
-    public function setPrince($prince)
+    public function setPrince($price)
     {
-        $this->prince = $prince;
+        $this->price = $price;
 
         return $this;
     }
 
     /**
-     * Get prince
+     * Get price
      *
      * @return string 
      */
-    public function getPrince()
+    public function getPrice()
     {
-        return $this->prince;
+        return $this->price;
     }
 
     /**
