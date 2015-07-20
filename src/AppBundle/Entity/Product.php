@@ -45,14 +45,14 @@ class Product
     /**
      * @var string
      *
-     * @ORM\Column(name="secondPrice", type="decimal")
+     * @ORM\Column(name="secondPrice", type="decimal", scale="2", nullable="true")
      */
     private $secondPrice;
 
     /**
      * @var boolean
      *
-     * @ORM\Column(name="enable", type="boolean")
+     * @ORM\Column(name="enable", type="boolean", scale="2", nullable="true")
      */
     private $enabled;
 

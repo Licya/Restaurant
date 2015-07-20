@@ -31,7 +31,7 @@ class DailyMenu
     /**
      * @var string
      *
-     * @ORM\Column(name="prince", type="decimal")
+     * @ORM\Column(name="prince", type="decimal", scale="2")
      */
     private $prince;
 
