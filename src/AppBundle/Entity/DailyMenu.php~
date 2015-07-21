@@ -147,40 +147,4 @@ class DailyMenu {
         return $this->enabled;
     }
 
-
-    /**
-     * Set price
-     *
-     * @param string $price
-     * @return DailyMenu
-     */
-    public function setPrice($price)
-    {
-        $this->price = $price;
-
-        return $this;
-    }
-
-    /**
-     * Set dailyMenuProducts
-     *
-     * @param \AppBundle\Entity\DailyMenuProduct $dailyMenuProducts
-     * @return DailyMenu
-     */
-    public function setDailyMenuProducts(\AppBundle\Entity\DailyMenuProduct $dailyMenuProducts = null)
-    {
-        $this->dailyMenuProducts = $dailyMenuProducts;
-
-        return $this;
-    }
-
-    /**
-     * Get dailyMenuProducts
-     *
-     * @return \AppBundle\Entity\DailyMenuProduct 
-     */
-    public function getDailyMenuProducts()
-    {
-        return $this->dailyMenuProducts;
-    }
 }
