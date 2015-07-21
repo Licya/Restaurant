@@ -29,6 +29,29 @@ class Category {
     private $name;
 
     /**
+     *
+     * @var string
+     * 
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
+     * @var int
+     * 
+     * @ORM\Column(name="sort", type="integer") 
+     */
+    private $sort;
+
+    /**
+     * @var boolean
+     * 
+     * @ORM\Column(name="enabled", type="boolean") 
+     */
+    private $enabled;
+
+
+    /**
      * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
      */
     private $products;
@@ -66,8 +89,7 @@ class Category {
     /**
      * Constructor
      */
-    public function __construct()
-    {
+    public function __construct() {
         $this->products = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -77,8 +99,7 @@ class Category {
      * @param \AppBundle\Entity\Product $products
      * @return Category
      */
-    public function addProduct(\AppBundle\Entity\Product $products)
-    {
+    public function addProduct(\AppBundle\Entity\Product $products) {
         $this->products[] = $products;
 
         return $this;
@@ -89,8 +110,7 @@ class Category {
      *
      * @param \AppBundle\Entity\Product $products
      */
-    public function removeProduct(\AppBundle\Entity\Product $products)
-    {
+    public function removeProduct(\AppBundle\Entity\Product $products) {
         $this->products->removeElement($products);
     }
 
@@ -99,8 +119,77 @@ class Category {
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getProducts()
-    {
+    public function getProducts() {
         return $this->products;
+    }
+
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Category
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set sort
+     *
+     * @param integer $sort
+     * @return Category
+     */
+    public function setSort($sort)
+    {
+        $this->sort = $sort;
+
+        return $this;
+    }
+
+    /**
+     * Get sort
+     *
+     * @return integer 
+     */
+    public function getSort()
+    {
+        return $this->sort;
+    }
+
+    /**
+     * Set enabled
+     *
+     * @param boolean $enabled
+     * @return Category
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    /**
+     * Get enabled
+     *
+     * @return boolean 
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
     }
 }
