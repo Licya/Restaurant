@@ -62,6 +62,12 @@ class Product {
     private $category;
 
     /**
+     * @ORM\OneToOne(targetEntity="DailyMenuProduct")
+     **/
+   private $dailyMenuProduct;
+
+
+   /**
      * Get id
      *
      * @return integer 
@@ -197,5 +203,28 @@ class Product {
     public function getCategory()
     {
         return $this->category;
+    }
+
+    /**
+     * Set dailyMenuProduct
+     *
+     * @param \AppBundle\Entity\DailyMenuProduct $dailyMenuProduct
+     * @return Product
+     */
+    public function setDailyMenuProduct(\AppBundle\Entity\DailyMenuProduct $dailyMenuProduct = null)
+    {
+        $this->dailyMenuProduct = $dailyMenuProduct;
+
+        return $this;
+    }
+
+    /**
+     * Get dailyMenuProduct
+     *
+     * @return \AppBundle\Entity\DailyMenuProduct 
+     */
+    public function getDailyMenuProduct()
+    {
+        return $this->dailyMenuProduct;
     }
 }
