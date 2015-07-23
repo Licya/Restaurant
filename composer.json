@@ -57,5 +57,8 @@
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
         }
+    },
+    "require": {
+        "doctrine/doctrine-fixtures-bundle": "2.2.*"
     }
 }
