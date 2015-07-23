@@ -10,7 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="AppBundle\Entity\DailyMenuRepository")
  */
-class DailyMenu {
+class DailyMenu
+{
 
     /**
      * @var integer
@@ -50,16 +51,17 @@ class DailyMenu {
     private $enabled;
 
     /**
-     * @ORM\ManyToOne(targetEntity="DailyMenuProduct")
+     * @ORM\ManyToOne(targetEntity="Proposition")
      * */
-    private $dailyMenuProducts;
+    private $proposition;
 
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
@@ -69,7 +71,8 @@ class DailyMenu {
      * @param string $title
      * @return DailyMenu
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         $this->title = $title;
 
         return $this;
@@ -80,7 +83,8 @@ class DailyMenu {
      *
      * @return string 
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 
@@ -90,7 +94,8 @@ class DailyMenu {
      * @param float $price
      * @return DailyMenu
      */
-    public function setPrince($price) {
+    public function setPrince($price)
+    {
         $this->price = $price;
 
         return $this;
@@ -101,7 +106,8 @@ class DailyMenu {
      *
      * @return string 
      */
-    public function getPrice() {
+    public function getPrice()
+    {
         return $this->price;
     }
 
@@ -111,7 +117,8 @@ class DailyMenu {
      * @param \DateTime $date
      * @return DailyMenu
      */
-    public function setDate($date) {
+    public function setDate($date)
+    {
         $this->date = $date;
 
         return $this;
@@ -122,7 +129,8 @@ class DailyMenu {
      *
      * @return \DateTime 
      */
-    public function getDate() {
+    public function getDate()
+    {
         return $this->date;
     }
 
@@ -132,7 +140,8 @@ class DailyMenu {
      * @param boolean $enabled
      * @return DailyMenu
      */
-    public function setEnabled($enabled) {
+    public function setEnabled($enabled)
+    {
         $this->enabled = $enabled;
 
         return $this;
@@ -143,10 +152,10 @@ class DailyMenu {
      *
      * @return boolean 
      */
-    public function getEnabled() {
+    public function getEnabled()
+    {
         return $this->enabled;
     }
-
 
     /**
      * Set price
@@ -161,26 +170,27 @@ class DailyMenu {
         return $this;
     }
 
+
     /**
-     * Set dailyMenuProducts
+     * Set proposition
      *
-     * @param \AppBundle\Entity\DailyMenuProduct $dailyMenuProducts
+     * @param \AppBundle\Entity\Proposition $proposition
      * @return DailyMenu
      */
-    public function setDailyMenuProducts(\AppBundle\Entity\DailyMenuProduct $dailyMenuProducts = null)
+    public function setProposition(\AppBundle\Entity\Proposition $proposition = null)
     {
-        $this->dailyMenuProducts = $dailyMenuProducts;
+        $this->proposition = $proposition;
 
         return $this;
     }
 
     /**
-     * Get dailyMenuProducts
+     * Get proposition
      *
-     * @return \AppBundle\Entity\DailyMenuProduct 
+     * @return \AppBundle\Entity\Proposition 
      */
-    public function getDailyMenuProducts()
+    public function getProposition()
     {
-        return $this->dailyMenuProducts;
+        return $this->proposition;
     }
 }

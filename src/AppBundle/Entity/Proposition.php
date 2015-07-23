@@ -5,13 +5,13 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * DailyMenuProduct
+ * Proposition
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Entity\DailyMenuProductRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\PropositionRepository")
  */
-class DailyMenuProduct
-{
+class Proposition {
+
     /**
      * @var integer
      *
@@ -28,15 +28,12 @@ class DailyMenuProduct
      */
     private $title;
 
-    /** @ORM\Entity **/
-
     /**
      * Get id
      *
      * @return integer 
      */
-    public function getId()
-    {
+    public function getId() {
         return $this->id;
     }
 
@@ -44,10 +41,9 @@ class DailyMenuProduct
      * Set title
      *
      * @param string $title
-     * @return DailyMenuProduct
+     * @return Proposition
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -58,8 +54,8 @@ class DailyMenuProduct
      *
      * @return string 
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
+
 }
