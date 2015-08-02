@@ -62,10 +62,9 @@ class Product {
     private $category;
 
     /**
-     * @ORM\OneToOne(targetEntity="DailyMenuProduct")
+     * @ORM\OneToOne(targetEntity="Proposition")
      **/
-   private $dailyMenuProduct;
-
+   private $proposition;
 
    /**
      * Get id
@@ -206,25 +205,25 @@ class Product {
     }
 
     /**
-     * Set dailyMenuProduct
+     * Set proposition
      *
-     * @param \AppBundle\Entity\DailyMenuProduct $dailyMenuProduct
+     * @param \AppBundle\Entity\Proposition $proposition
      * @return Product
      */
-    public function setDailyMenuProduct(\AppBundle\Entity\DailyMenuProduct $dailyMenuProduct = null)
+    public function setProposition(\AppBundle\Entity\Proposition $proposition = null)
     {
-        $this->dailyMenuProduct = $dailyMenuProduct;
+        $this->proposition = $proposition;
 
         return $this;
     }
 
     /**
-     * Get dailyMenuProduct
+     * Get proposition
      *
-     * @return \AppBundle\Entity\DailyMenuProduct 
+     * @return \AppBundle\Entity\Proposition 
      */
-    public function getDailyMenuProduct()
+    public function getProposition()
     {
-        return $this->dailyMenuProduct;
+        return $this->proposition;
     }
 }
